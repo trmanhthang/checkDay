@@ -10,7 +10,7 @@
 
 <body>
     <p>Nhập Tháng</p>
-    <input id="num" type="text">
+    <input id="num" type="number">
     <input type="button" value="Check" onclick="clickkk()">
     <p id="result"></p>
 
@@ -19,9 +19,9 @@
 <script>
     addEventListener("click")
     function clickkk() {
-        let moth = parseFloat(document.getElementById('num').value);
+        let moth = parseInt(document.getElementById('num').value);
         console.log(moth);
-        if (moth > 12) {
+        if (moth > 12 || moth < 1) {
             document.getElementById('result').innerHTML = 'Tháng ko tồn tại'
         } else {
             switch (moth) {
