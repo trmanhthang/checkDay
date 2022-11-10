@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check day</title>
+</head>
+
+<body>
+    <p>Nhập Tháng</p>
+    <input id="num" type="text">
+    <input type="button" value="Check" onclick="clickkk()">
+    <p id="result"></p>
+
+</body>
+
+<script>
+    addEventListener("click")
+    function clickkk() {
+        let moth = parseFloat(document.getElementById('num').value);
+        console.log(moth);
+        if (moth > 12) {
+            document.getElementById('result').innerHTML = 'Tháng ko tồn tại'
+        } else {
+            switch (moth) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById('result').innerHTML = 'Có 31 ngày';
+                    break;
+                case 2:
+                    document.getElementById('result').innerHTML = 'Có 28 hoặc 29 ngày';
+                    break;
+                default:
+                    document.getElementById('result').innerHTML = "Có 30 ngày";
+            }
+        }
+    }
+</script>
+
+</html>
